@@ -12,8 +12,11 @@ export const getData = async (req, res) => {
 };
 
 export const createData = async (req, res) => {
-  const card = req.body; // user provides this
-  const newData = new GoogleForm(card);
+  const { name, email, batch } = req.body;
+  console.log(req.body);
+  console.log(name, email);
+  const newData = new GoogleForm({ name, email, batch });
+  console.log(newData);
   try {
     await newData.save();
     res.status(201).json(newData);
