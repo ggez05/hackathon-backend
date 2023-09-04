@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import router from "./routes/cards.js";
-
+import routerForm from "./routes/googleForm.js";
 const app = express();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/addcard", router);
-
+app.use("/formdata", routerForm);
 // https://www.mongodb.com/cloud/atlas
 
 const CONNECTION_URL =
