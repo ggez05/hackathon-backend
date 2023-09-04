@@ -13,7 +13,7 @@ export const getData = async (req, res) => {
 
 export const createData = async (req, res) => {
   const { name, email, batch } = req.body;
-  console.log(req.body);
+  console.log(req);
   console.log(name, email);
   const newData = new GoogleForm({ name, email, batch });
   console.log(newData);
